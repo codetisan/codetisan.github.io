@@ -22,6 +22,7 @@ twitter_username: jekyllrb
 github_username:  codetisan
 
 # Build settings
+highlighter: pygments
 markdown: kramdown
 theme: minima
 plugins:
@@ -30,8 +31,15 @@ plugins:
 rss_path: feed.xml
 categories_path: category.html
 tags_path: tag.html
+encoding: utf-8
+defaults:
+  -
+    scope:
+      path: "" # empty string for all files
+    values:
+      title: "Codetisan"
 
-BASE_PATH:
+BASE_PATH: ""
 
 gems: [jekyll-paginate]
 # Exclude from processing.

@@ -11,24 +11,25 @@ title: Centos下安装和配置Nginx
 
 ### 准备工作
   
-  1. ####安装make：
+  1.  安装make：
     	yum -y install gcc automake autoconf libtool make
-  2. ####安装g++:
+  2. 安装g++:
     	yum install gcc gcc-c++
-  3. ####安装pcre，zlib库：
+  3. 安装pcre，zlib库：
     	yum install pcre pcre-devel zlib zlib-devel
-  4. ####安装ssl:
+  4. 安装ssl:
     	yum -y install openssl openssl-devel
-  5. ####下载Nginx：
+  5. 下载Nginx：
   		wget http://nginx.org/download/nginx-1.8.1.tar.gz
   
-###安装Nginx
+### 安装Nginx
   
-  1. ####解压：
-  		tar zxvf nginx-1.8.1.tar.gz
-  2. ####进入nginx目录：
-  		cd nginx-1.8.1
-  3. ####配置：
+  1. 解压：
+		tar zxvf nginx-1.8.1.tar.gz
+  2. 进入nginx目录：
+		cd nginx-1.8.1
+  3. 配置：
+~~~~
 	  	./configure  \
 	    --prefix=/etc/nginx \
 	    --sbin-path=/usr/sbin/nginx \
@@ -62,21 +63,22 @@ title: Centos下安装和配置Nginx
 	    --with-file-aio \
 	    --with-http_spdy_module \
 	    --with-ipv6
-  4. ####编译:
-  		make && make install
+~~~~
+  4. 编译:
+		make && make install
   6. 创建相关子目录:/var/cache/nginx及其子目录
-  7. ####添加nginx的组和用户
+  7. 添加nginx的组和用户
 	    groupadd nginx
 	    useradd -g nginx nginx
-  8. ####确保nginx默认的80端口没有被占用：
+  8. 确保nginx默认的80端口没有被占用：
     	netstat -ano|grep 80
     
-  9. ####启动nginx
+  9. 启动nginx
     	/usr/sbin/nginx
-  10. ####打开浏览器，验证是否启动成功
+  10. 打开浏览器，验证是否启动成功
     	看到"Welcome to nginx!" 证明nginx已经启动成功
-  11. ####设置开机启动
+  11. 设置开机启动
     	echo "/usr/sbin/nginx" >> /etc/rc.local
-  12. ####nginx重启
+  12. nginx重启
   	nginx -s reload
 

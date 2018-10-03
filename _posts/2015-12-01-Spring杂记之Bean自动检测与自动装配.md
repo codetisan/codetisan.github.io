@@ -39,7 +39,7 @@ Spring支持几种不同的自动装配的注解：
 - JSR-330的@Inject注解
 - JSR-250的@Resource注解
 
-####@Autowired 
+#### @Autowired 
 1. @Autowired可以标注CONSTRUCTOR,FIELD,METHOD,ANNOTATION_TYPE
 2. 默认情况下，使用@Autowired标注的属性或参数必须是可以装配的，如果没有，则会抛出NoSuchBeanDefinitionException，有多个Bean满足装配条件时也会抛出该异常；
 3. 当希望没有合适的Bean装配是，允许属性或参数为null，则可以使用@Autowired(required=false)来配置自动装配是可选的；

@@ -22,6 +22,7 @@ title: Java基础之注解(annotation)
 	3. 运行时注解：运行时根据注解来动态改变程序的行为
 
 ### java定义的注解
+
 |注解接口|应用场合|目的
 |---------|-----------|-------|
 |Deprecated|全部|将项标记为过时|
@@ -97,7 +98,7 @@ public enum ElementType {
 ``` 
 
 ### 注解的语法
-####1. 注解的定义
+#### 1. 注解的定义
 
 ```java
 @Target({ ElementType.TYPE, ElementType.METHOD }) 	// #1
@@ -120,11 +121,11 @@ public @interface SampleAnnotation {				// #4
 }
 ```
 
-- #1 指定该annotation可以用在TYPE和METHOD上，值为多个的情况要用{}括起来
-- #2 指定该annotation保留到运行时
-- #3 指定这个注解应该包含在注解项的文档中
-- #4 annotation必须使用@interface来修饰
-- #5 - #10：定义注解的元素,注解可以定义0个元素，也可以定义多个元素，元素可以使用以下几种类型
+- 1 指定该annotation可以用在TYPE和METHOD上，值为多个的情况要用{}括起来
+- 2 指定该annotation保留到运行时
+- 3 指定这个注解应该包含在注解项的文档中
+- 4 annotation必须使用@interface来修饰
+- 5 - #10：定义注解的元素,注解可以定义0个元素，也可以定义多个元素，元素可以使用以下几种类型
 	- 基本类型（int, short, long, byte, char, double, float,boolean）
 	- String
 	- Class
@@ -160,6 +161,6 @@ public class Account {
 }
 ```
 
-*关于如何在运行时获取反射以动态修改程序运行将在[Java基础之反射(reflect)]中描述
+**关于如何在运行时获取反射以动态修改程序运行将在[Java基础之反射(reflect)]中描述**
 
 参考：《JAVA核心技术》
